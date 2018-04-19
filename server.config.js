@@ -1,8 +1,8 @@
 module.exports = {
 	"files": [
-		"./example/**/*"
+		"./examples/**/*"
 	],
 	"server": {
-		baseDir: "./example"
+		baseDir: "./examples"
 	}
 }

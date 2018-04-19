@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"outDir": "./build/",
+    "module": "es2015",
+		"types": [
+			"tape"
+    ],
+    "jsx": "react",
+    "jsxFactory": "jsx"
+  },
+	"include": [
+    "./**/*.ts",
+		"./**/*.tsx"
+	]
+}
