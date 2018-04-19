@@ -153,3 +153,52 @@ tape('should render a component', function(test) {
 
   test.end();
 });
+
+tape('should render a rectangle', function(test) {
+
+  interface RectProps {
+    x: number, 
+    y: number
+    height: number,
+    width: number,
+  }
+
+  class Rect extends Component<RectProps> {
+    constructor(props: RectProps) {
+      super(props);
+    }
+
+    render() {
+      let { x, y, height, width } = this.props;
+      return (<rect x={x} y={y} height={height} width={width} />);
+    }
+  }
+
+  test.deepEqual( <Rect x={50} y={40} height={120} width={140} />, 
+    <rect x={50} y={40} height={120} width={140} ></rect> 
+  )
+
+  test.end();
+
+});
+
+tape('should render a circle', function (test) {
+  interface CircleProps {
+    x: number,
+    y: number,
+    radius: number
+  }
+
+  // <circle cx="50" cy="50" r="50"/>
+  const Circle = (props: CircleProps) => {
+    return (
+      <circle cx={props.x} cy={props.y} r={props.radius} />
+    );
+  }
+
+  test.deepEqual( <Circle x={100} y={200} radius={99} />, 
+    <circle cx={100} cy={200} r={99} />
+  )
+
+  test.end();
+});
